@@ -1,4 +1,8 @@
+"use client";
+import { useState } from "react";
+
 export default function Home() {
+  const [show, setShow] = useState(false);
   return (
     <div id="home">
       <nav className="drop-shadow-md bg-white w-full">
@@ -6,42 +10,42 @@ export default function Home() {
           <h1>Mars.dev</h1>
           <i
             className="lni lni-menu text-2xl cursor-pointer"
-            // onClick={() => setShow(!show)}
+            onClick={() => setShow(!show)}
           ></i>
         </div>
       </nav>
 
       {/* Side Options */}
-      {/* <div
-    className={`absolute w-full -top-0 ${
-      show ? "left-0" : "-left-[100%]"
-    } duration-300 ease-in-out`}
-  >
-    <div className={`text-white text-2xl bg-[#061e07] h-screen`}>
-      <div className="absolute h-screen w-full">
-        <div className="flex justify-end pt-7 pr-8 text-3xl">
-          <i
-            className="lni lni-plus rotate-45 cursor-pointer"
-            onClick={() => setShow(!show)}
-          ></i>
+      <div
+        className={`absolute w-full -top-0 ${
+          show ? "left-0" : "-left-[100%]"
+        } duration-300 ease-in-out`}
+      >
+        <div className={`text-white text-2xl bg-[#061e07] h-screen`}>
+          <div className="absolute h-screen w-full">
+            <div className="flex justify-end pt-7 pr-8 text-3xl">
+              <i
+                className="lni lni-plus rotate-45 cursor-pointer"
+                onClick={() => setShow(!show)}
+              ></i>
+            </div>
+            <ul className="text-center flex flex-col gap-9 mt-[35vh]">
+              <li onClick={() => setShow(false)}>
+                <a href="#home">Home</a>
+              </li>
+              <li onClick={() => setShow(false)}>
+                <a href="#about">About</a>
+              </li>
+              <li onClick={() => setShow(false)}>
+                <a href="#projects">Projects</a>
+              </li>
+              <li onClick={() => setShow(false)}>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <ul className="text-center flex flex-col gap-9 mt-[35vh]">
-          <li onClick={() => setShow(false)}>
-            <a href="#home">Home</a>
-          </li>
-          <li onClick={() => setShow(false)}>
-            <a href="#about">About</a>
-          </li>
-          <li onClick={() => setShow(false)}>
-            <a href="#projects">Projects</a>
-          </li>
-          <li onClick={() => setShow(false)}>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
       </div>
-    </div>
-  </div> */}
 
       {/* Hero */}
       <section className="py-8 pb-28 bg-[#f9f8f8]">
